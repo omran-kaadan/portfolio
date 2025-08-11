@@ -1,0 +1,127 @@
+/* Sign-in Page Styles */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0C1B2A 60%, #2F80ED 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.signin-container {
+  width: 370px;
+  margin: 0;
+  padding: 40px 30px 32px 30px;
+  background: rgba(26, 46, 69, 0.65);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 #2F80ED55, 0 2px 8px 0 #56CCF222;
+  border: 2px solid #56CCF2;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #B3E5FC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.signin-container h2 {
+  margin-bottom: 24px;
+  font-size: 2.1rem;
+  color: #56CCF2;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #2F80ED88;
+}
+
+.signin-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signin-container label {
+  font-size: 1.08rem;
+  color: #B3E5FC;
+  margin-bottom: 4px;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="password"] {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #56CCF2;
+  background: rgba(44,62,80,0.85);
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px #2F80ED22;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="password"]:focus {
+  border-color: #2F80ED;
+  box-shadow: 0 0 16px #56CCF2AA;
+}
+
+.signin-container button[type="submit"] {
+  padding: 12px 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2F80ED 60%, #56CCF2 100%);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 8px 0 #2F80ED22;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.signin-container button[type="submit"]:hover {
+  background: linear-gradient(90deg, #56CCF2 60%, #2F80ED 100%);
+  box-shadow: 0 0 16px #56CCF2AA, 0 2px 8px #2F80ED88;
+}
+
+.back-home {
+  display: inline-block;
+  margin: 24px auto 0 auto;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #2F80ED 60%, #56CCF2 100%);
+  color: #FFFFFF;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid #56CCF2;
+  box-shadow: 0 2px 8px 0 #2F80ED22;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.back-home:hover {
+  background: linear-gradient(90deg, #56CCF2 60%, #2F80ED 100%);
+  color: #B3E5FC;
+  box-shadow: 0 0 16px #56CCF2AA, 0 2px 8px #2F80ED88;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Intro</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <div class="intro-bg">
+  <div class="glassy-box">
+    <h1> Omran</h1>
+    <div class="port" id="port"></div>
+  </div>
+  <div class="main-site" id="mainSite">
+  <nav class="navbar">
+    <span class="nav-name">Omran Kaadan</span>
+    <span class="nav-role">Full Stack Developer</span>
+    <ul class="nav-links">
+      <li><a href="#contact">Email Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="/cv" target="_blank">My CV</a></li>
+      <li><a href="/signin">Sign In</a></li>
+    </ul>
+  </nav>
+  <div class="main-body">
+  <div class="info-left">
+    <h2>Hello!</h2>
+    <ul>
+      <li>Full Stack Developer</li>
+      <li>Graduated from <strong>Lebanese International University(LIU)</strong></li>
+      <li>Bachelor of Computer & Communication Engineering (2025)</li>
+      <li>GPA: 3.1/4.0</li>
+      <li>JavaScript, Node.js, Express, PostgreSQL</li>
+      <li>Building modern web experiences</li>
+    </ul>
+  </div>
+    <div class="profile-lobby">
+      <div class="profile-card-3d">
+        <img src="WhatsApp Image 2025-08-07 at 10.08.34 PM.jpeg" alt="Profile Picture" class="profile-pic-3d">
+      </div>
+      </div>
+  </div>
+  <!-- Projects Section -->
+<section class="projects-section" id="projects">
+  <h2 class="projects-title">My Projects</h2>
+  <div class="projects-cards" id="projectsCards"></div>
+</section>
+  <!-- Skills Section (now inside main-site) -->
+  <section class="skills-section section slide-in-left" id="skills">
+    <h2 class="skills-title">My Skills</h2>
+    <div class="skills-cards">
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-img">
+        <h3>JavaScript</h3>
+        <p>Learned from university courses, online resources, and real-world projects.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-img">
+        <h3>Node.js</h3>
+        <p>Learned from Udemy Full-stack development course</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="skill-img">
+        <h3>Express.js</h3>
+        <p>Used for server-side logic in web applications and portfolio projects.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-img">
+        <h3>PostgreSQL</h3>
+        <p>Learned through database courses and hands-on web app development.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="skill-img">
+        <h3>PHP</h3>
+        <p>Studied in university and practiced with backend web development.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-img">
+        <h3>MySQL</h3>
+        <p>Learned through database courses and web projects.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-img">
+        <h3>Java</h3>
+        <p>Studied in university and built small desktop apps.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-img">
+        <h3>React</h3>
+        <p>Learned from Udemy full-stack development course.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-img">
+        <h3>Git</h3>
+        <p>Version control for all my projects, learned through practice.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-img">
+        <h3>GitHub</h3>
+        <p>Collaboration and code hosting for my portfolio and some projects.</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://img.icons8.com/ios-filled/100/000000/keyboard.png" alt="Typing Speed" class="skill-img">
+        <h3>Typing Speed</h3>
+        <p>50 WPM (Words Per Minute) - tested and improved through daily practice.</p>
+      </div>
+    </div>
+  </section>
+<div class="contact-section" id="contact">
+  <h2>Contact Me</h2>
+  <ul class="contact-list">
+    <li><strong>Phone:</strong> <a href="tel:+96171123456">+961 81 717 230</a></li>
+    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/omran-kaadan-5b817725a" target="_blank">www.linkedin.com/in/omran-kaadan-5b817725a</a></li>
+    <li><strong>Address:</strong> Dibbiyeh, Lebanon</li>
+  </ul>
+  <form class="email-form" action="/send-email" method="POST">
+  <p>Via Email:</p>
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" placeholder="Type your email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+    <button type="submit">Send Email</button>
+  </form>
+  
+</div>
+
+<script>
+function showProjectImages(id) {
+  var el = document.getElementById('project-images-' + id);
+  if (el) {
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+}
+
+// Fetch projects from /projects and render them
+function renderProjects(projects) {
+  var container = document.getElementById('projectsCards');
+  container.innerHTML = '';
+  projects.forEach(function(project) {
+    var card = document.createElement('div');
+    card.className = 'project-card';
+    // Thumbnail
+    if (project.thumbnail) {
+      var thumb = document.createElement('img');
+      thumb.src = project.thumbnail.url;
+      thumb.alt = 'Thumbnail';
+      thumb.className = 'project-thumb';
+      card.appendChild(thumb);
+    }
+    var imagesDiv = document.createElement('div');
+    imagesDiv.className = 'project-images';
+    imagesDiv.style.display = 'none';
+    project.otherImages.forEach(function(img) {
+      var imgEl = document.createElement('img');
+      imgEl.src = img.url;
+      imgEl.alt = 'Project Image';
+      imgEl.className = 'project-img';
+      imagesDiv.appendChild(imgEl);
+    });
+    card.appendChild(imagesDiv);
+    card.onclick = function() {
+      if (imagesDiv.style.display === 'none' || imagesDiv.style.display === '') {
+        imagesDiv.style.display = 'flex';
+        card.classList.add('active');
+      }
+      else {
+        imagesDiv.style.display = 'none';
+        card.classList.remove('active');
+      }
+    };
+  
+    var title = document.createElement('h3');
+    title.textContent = project.title;
+    card.appendChild(title);
+    var desc = document.createElement('p');
+    desc.textContent = project.description;
+    card.appendChild(desc);
+    var meta = document.createElement('div');
+    meta.className = 'project-meta';
+    meta.innerHTML =  '</span>' +
+      '<span>Tech Stack: ' + project.tech_stack + '</span>';
+    card.appendChild(meta);
+    container.appendChild(card);
+  });
+}
+
+// Load projects on DOMContentLoaded
+window.addEventListener('DOMContentLoaded', function() {
+  fetch('/projects')
+    .then(res => res.json())
+    .then(data => renderProjects(data));
+});
+</script>
+</div>
+  <script>
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0); // Always scroll to top on refresh
+
+document.body.style.overflowY = "hidden"; // Prevent scrolling during intro
+document.documentElement.style.overflowY = "hidden"; // Prevent scrolling during intro
+
+window.onload = function() {
+  // Initialize floating glowing particles immediately
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: true },
+    particles: {
+      number: { value: 50 },
+      color: { value: ["#2F80ED", "#56CCF2", "#B3E5FC", "#FFFFFF", "#D3D3D3"] },
+      shape: { type: "circle" },
+      opacity: {
+        value: 0.7,
+        random: true,
+        anim: { enable: true, speed: 0.5, opacity_min: 0.3, sync: false }
+      },
+      size: {
+        value: 3,
+        random: { enable: true, minimumValue: 1 }
+      },
+      move: {
+        enable: true,
+        speed: 1.2,
+        direction: "none",
+        random: true,
+        straight: false,
+        outModes: { default: "out" }
+      },
+      glow: {
+        enable: true,
+        color: ["#56CCF2", "#B3E5FC", "#FFFFFF"],
+        radius: 10,
+        intensity: 0.8
+      }
+    },
+    background: {
+      color: "#0C1B2A"
+    }
+  });
+
+  // Continue with intro animation
+  setTimeout(() => {
+    document.getElementById('port').style.left = '10px';
+    setTimeout(() => {
+      document.querySelector('.glassy-box').classList.add('glow');
+      setTimeout(() => {
+        document.querySelector('.glassy-box').classList.add('fade-out');
+        document.getElementById('port').classList.add('fade-out');
+        setTimeout(() => {
+          document.getElementById('mainSite').classList.add('visible');
+          // Show vertical scroll after intro fades out
+          document.body.style.overflowY = 'auto';
+          document.documentElement.style.overflowY = 'auto';
+        }, 900); // Wait for fade out to finish
+      }, 1200); // Wait before fading out box/port
+    }, 1000);
+  }, 800);
+};
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var profileCard = document.querySelector('.profile-card-3d');
+    if (profileCard) {
+      profileCard.classList.add('flipping');
+      setTimeout(function() {
+        profileCard.classList.remove('flipping');
+      }, 2200);
+    }
+  }, 12000);
+
+  // Flip every 1 minute
+  setInterval(function() {
+    var profileCard = document.querySelector('.profile-card-3d');
+    if (profileCard) {
+      profileCard.classList.add('flipping');
+      setTimeout(function() {
+        profileCard.classList.remove('flipping');
+      }, 2200);
+    }
+  }, 60000);
+});
+
+// Remove setTimeout-based reveal for skills/contact
+// Add scroll-based reveal logic
+function revealSectionOnScroll(sectionSelector) {
+  var section = document.querySelector(sectionSelector);
+  if (!section || section.classList.contains('visible')) return;
+  var rect = section.getBoundingClientRect();
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  if (rect.top <= windowHeight - 30) {
+    section.classList.add('visible');
+  }
+}
+
+window.addEventListener('scroll', function() {
+  revealSectionOnScroll('.projects-section');
+  revealSectionOnScroll('.skills-section');
+  revealSectionOnScroll('.contact-section');
+});
+window.addEventListener('load', function() {
+  revealSectionOnScroll('.projects-section');
+  revealSectionOnScroll('.skills-section');
+  revealSectionOnScroll('.contact-section');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

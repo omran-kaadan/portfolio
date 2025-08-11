@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    
+    <!-- Fixed Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-section" id="projects-section">
+        <h3 class="sidebar-title" data-target="projects" aria-selected="true">Projects</h3>
+        <button class="sidebar-btn hidden" id="showProjectForm">Add Project</button>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title" data-target="activity" aria-selected="false">Activity</h3>
+      </div>
+
+      <div class="sidebar-section">
+        <h3 class="sidebar-title" data-target="emails" aria-selected="false">Emails</h3>
+      </div>
+      <div class="sidebar-section">
+        <a href="/" class="admin-btn">Back to Home</a>
+    </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2>Welcome, <%= username %>!</h2>
+      <h3>Admin Dashboard</h3>
+
+      <form class="project-form hidden" id="projectForm" action="/admin/add-project" method="post" enctype="multipart/form-data">
+        <label for="title">Project Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" required></textarea>
+
+        <label for="finishedby">Finished By</label>
+        <input type="text" id="finishedby" name="finishedby" required>
+
+        <label for="techstack">Tech Stack</label>
+        <input type="text" id="techstack" name="techstack" required>
+
+        <label for="thumbnail">Thumbnail Image</label>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+
+        <label for="images">Other Images (can select multiple)</label>
+        <input type="file" id="images" name="images" accept="image/*" multiple>
+
+        <button type="submit">Add Project</button>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    // Show button when Projects section clicked
+    document.querySelectorAll('.sidebar-title').forEach(title => {
+      title.addEventListener('click', function() {
+        if (this.dataset.target === 'projects') {
+          document.getElementById('showProjectForm').classList.remove('hidden');
+        } else {
+          document.getElementById('showProjectForm').classList.add('hidden');
+          document.getElementById('projectForm').classList.add('hidden');
+        }
+      });
+    });
+
+    // Toggle project form visibility
+    document.getElementById('showProjectForm').addEventListener('click', function() {
+      document.getElementById('projectForm').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

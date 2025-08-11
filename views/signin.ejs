@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="signin.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <div class="signin-container">
+    <a href="/" class="back-home">back to home</a>
+    <h2>Sign In</h2>
+    <form action="/signin" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  <script>
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: true },
+      particles: {
+        number: { value: 40 },
+        color: { value: ["#2F80ED", "#56CCF2", "#B3E5FC", "#FFFFFF"] },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.7,
+          random: true,
+          anim: { enable: true, speed: 0.5, opacity_min: 0.3, sync: false }
+        },
+        size: {
+          value: 3,
+          random: { enable: true, minimumValue: 1 }
+        },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: true,
+          straight: false,
+          outModes: { default: "out" }
+        },
+        glow: {
+          enable: true,
+          color: ["#56CCF2", "#B3E5FC", "#FFFFFF"],
+          radius: 10,
+          intensity: 0.8
+        }
+      },
+      background: {
+        color: "#0C1B2A"
+      }
+    });
+  </script>
+</body>
+</html>
