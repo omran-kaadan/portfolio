@@ -13,7 +13,7 @@ import nodemailer from "nodemailer";
 import pg from "pg";
 import { Client } from "pg";
 
-
+const { Pool } = pg;
 const app = express();
 
 
@@ -32,15 +32,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-const db = new Client({
-	user: process.env.DB_USER,
-	host: process.env.DB_HOST,
-	database: process.env.DB_NAME,
-	password: process.env.DB_PASSWORD,
-	port: process.env.DB_PORT
+const db = new Pool({
+	connectionString: process.env.DATABASE_URL, // your external DB URL
+	ssl: { rejectUnauthorized: false } // required for some external DBs
 });
 
-// Connect to the database once when the server starts
 db.connect()
 	.then(() => console.log("Connected to PostgreSQL database"))
 	.catch((err) => {
