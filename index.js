@@ -157,6 +157,36 @@ if (!fs.existsSync("public/uploads")) {
   fs.mkdirSync("public/uploads", { recursive: true });
 }
 
+const pool = new pg.Pool({
+  connectionString: process.env.DATABASE_URL, // Render DB connection string
+  ssl: { rejectUnauthorized: false } // needed if using PostgreSQL on Render
+});
+
+// POST route to create admin
+app.post('/create-admin', async (req, res) => {
+  try {
+    const username = 'admin';
+    const plainPassword = 'omrankaadan12ert!';
+
+    // Hash password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+
+    // Insert into users table
+    const query = `
+      INSERT INTO users (username, password)
+      VALUES ($1, $2)
+      ON CONFLICT (username) DO NOTHING
+    `;
+    await pool.query(query, [username, hashedPassword]);
+
+    res.status(200).send('Admin user created (or already exists)');
+  } catch (err) {
+    console.error('Error inserting admin:', err);
+    res.status(500).send('Error creating admin user');
+  }
+});
+
 // Add project route
 app.post('/admin/add-project', upload.fields([
   { name: 'thumbnail', maxCount: 1 },
