@@ -157,11 +157,6 @@ if (!fs.existsSync("public/uploads")) {
   fs.mkdirSync("public/uploads", { recursive: true });
 }
 
-const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL, // Render DB connection string
-  ssl: { rejectUnauthorized: false } // needed if using PostgreSQL on Render
-});
-
 // POST route to create admin
 app.post('/create-admin', async (req, res) => {
   try {
@@ -178,7 +173,7 @@ app.post('/create-admin', async (req, res) => {
       VALUES ($1, $2)
       ON CONFLICT (username) DO NOTHING
     `;
-    await pool.query(query, [username, hashedPassword]);
+    await db.query(query, [username, hashedPassword]);
 
     res.status(200).send('Admin user created (or already exists)');
   } catch (err) {
