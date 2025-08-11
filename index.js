@@ -12,8 +12,8 @@ import nodemailer from "nodemailer";
 
 import pg from "pg";
 import { Client } from "pg";
-
-const { Pool } = pg;
+import pkg from 'pg';
+const { Pool } = pkg;
 const app = express();
 
 
@@ -32,17 +32,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 const db = new Pool({
-	connectionString: process.env.DATABASE_URL, // your external DB URL
-	ssl: { rejectUnauthorized: false } // required for some external DBs
+  connectionString: isProduction
+    ? process.env.DATABASE_URL // Render
+    : `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`, // Local
+  ssl: isProduction ? { rejectUnauthorized: false } : false
 });
 
-db.connect()
-	.then(() => console.log("Connected to PostgreSQL database"))
-	.catch((err) => {
-		console.error("Database connection error:", err.message);
-		process.exit(1);
-	});
+// Test connection
+(async () => {
+  try {
+    const client = await db.connect();
+    console.log("Connected to PostgreSQL database");
+    client.release();
+  } catch (err) {
+    console.error("Database connection error:", err.message);
+    process.exit(1);
+  }
+})();
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
@@ -152,12 +163,12 @@ const upload = multer({ storage: storage });
 if (!fs.existsSync("public/uploads")) {
   fs.mkdirSync("public/uploads", { recursive: true });
 }
-
+/*
 // POST route to create admin
-app.post('/create-admin', async (req, res) => {
+app.get('/create-admin', async (req, res) => {
   try {
-    const username = 'admin';
-    const plainPassword = 'omrankaadan12ert!';
+    const username = '';
+    const plainPassword = '';
 
     // Hash password
     const saltRounds = 10;
@@ -167,7 +178,6 @@ app.post('/create-admin', async (req, res) => {
     const query = `
       INSERT INTO users (username, password)
       VALUES ($1, $2)
-      ON CONFLICT (username) DO NOTHING
     `;
     await db.query(query, [username, hashedPassword]);
 
@@ -176,7 +186,7 @@ app.post('/create-admin', async (req, res) => {
     console.error('Error inserting admin:', err);
     res.status(500).send('Error creating admin user');
   }
-});
+});*/
 
 // Add project route
 app.post('/admin/add-project', upload.fields([
