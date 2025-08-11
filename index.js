@@ -5,7 +5,7 @@ import env from "dotenv";
 import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import multer from "multer";
 import fs from "fs";
 import nodemailer from "nodemailer";
